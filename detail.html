@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahsulot Tafsilotlari</title>
+  <link rel="stylesheet" href="./detail.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">Onlayn Magazin</div>
+    <div class="cart">
+      <button onclick="goToCart()">🛒 Cart</button>
+    </div>
+  </div>
+  <div id="cart-container" class="cart-container"></div>
+  <div class="container">
+    <div class="top">
+      <p>Скидка 10% по промокоду “ZAMOK” на все заказы до 10.09</p>
+      <p id="recall">Обратный звонок</p>
+    </div>
+
+    <div class="header">
+      <div class="logo">
+        <img src="./Logo.svg" alt="LOGO">
+      </div>
+
+      <div class="bar">
+        <nav>
+          <a href="#">Главная</a>
+          <a href="#">Каталог</a>
+          <a href="#">Оптовая продажа</a>
+          <a href="#">О нас</a>
+        </nav>
+      </div>
+
+      <div class="item">
+        <p><img src="./phone-call 1.svg" alt="phone">+7 (966) 55 88 499</p>
+
+        <div class="store">
+          <i class="fa-regular fa-heart"></i>
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="product-detail-container" class="product-detail"></div>
+  <script src="./detail.js"></script>
+</body>
+</html>

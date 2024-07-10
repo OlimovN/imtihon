@@ -1,0 +1,564 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    max-width: 1920px;
+    height: 100%;
+}
+
+.top {
+    height: 44px;
+    background-color: #454F5B;
+    display: flex;
+}
+
+.top p {
+    margin-left: 300px;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#recall {
+    margin-left: 400px;
+    text-decoration: underline;        
+}
+
+.header {
+    display: flex;
+    height: 70px;
+    padding: 20px 80px;
+}
+
+.bar {
+    margin-left: 50px;
+}
+
+.bar a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #000;
+    margin: 10px;
+}
+
+.bar a:hover {
+    font-size: 20px;
+    text-decoration: underline;
+    color: #000;
+    margin: 10px;
+}
+
+.item {
+    margin-left: 510px;
+    display: flex;
+    font-size: 20px;
+}
+
+.item p {
+    cursor: pointer;
+}
+
+.store {
+    margin-left: 25px;
+}
+
+.store i {
+    cursor: pointer;
+}
+
+.store a {
+    color: #000;
+    cursor: pointer;
+}
+
+.store a:hover {
+    color: #454F5B;
+    cursor: pointer;
+}
+
+.word {
+    margin-top: 30px;
+    margin-left: 80px;
+    font-size: 17px;
+}
+
+.word span {
+    color: #454F5B;
+}
+
+.elektr {
+    display: flex;
+    margin-left: 80px;
+    margin-top: 30px;
+}
+
+.elektr p {
+    font-size: 18px;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+.filter {
+    display: flex;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.filter button {
+    background-color: #F5F5F5;
+    border: 1px solid #C4CDD5;
+    width: 250px;
+    height: 50px;
+    margin: 40px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.filter button:hover {
+    background-color: #454F5B;
+    border: 1px solid #C4CDD5;
+    width: 250px;
+    height: 50px;
+    margin: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.filter select {
+    margin-left: 50px;
+    width: 250px;
+    height: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    color: #000;
+    margin-top: 40px;
+}
+
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .cart {
+  cursor: pointer;
+}
+
+.price-filter {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.price-filter label {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.price-filter select {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.product-card .category {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.product-card .new-price {
+  font-size: 16px;
+  color: #007bff;
+  margin: 5px 0;
+}
+
+.product-card .old-price {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.product-card .rating {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.product-card .stars {
+  display: inline-block;
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+.product-card button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.navbar .cart {
+  cursor: pointer;
+}
+
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+
+.product-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.product-card .category {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.product-card .new-price {
+  font-size: 16px;
+  color: #007bff;
+  margin: 5px 0;
+}
+
+.product-card .old-price {
+  font-size: 14px;
+  color: #ccc;
+  text-decoration: line-through;
+  margin-bottom: 5px;
+}
+
+.product-card .rating {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.product-card .stars {
+  display: inline-block;
+  color: #ffcc00;
+  font-size: 20px;
+}
+
+.product-card button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.product-card button:hover {
+  background-color: #0056b3;
+}
+
+
+.black  {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 150px;
+}
+
+.info {
+    margin-left: 80px;
+    margin-top: 80px;
+}
+
+.info h1 {
+    font-size: 32px;
+}
+
+.info p {
+    font-size: 18px;
+    color: #454F5B;
+}
+
+
+.box {
+    margin-top: 20px;
+    gap: 30px;
+}
+
+.box span {
+    color: #161C24;
+}
+
+.box input,span {
+    font-size: 20px;
+}
+
+.ac {
+    color: #454F5B;
+    font-size: 10px;
+    margin-top: 100px;
+}
+
+
+.white  {
+    display: flex;
+    margin-top: 100px;
+        margin-left: 150px;
+
+}
+
+.info2 {
+    margin-left: 60px;
+    margin-top: 80px;
+}
+
+.info2 h1 {
+    font-size: 32px;
+}
+
+.info2 p {
+    font-size: 18px;
+    color: #454F5B;
+}
+
+.ac {
+    color: #454F5B;
+    font-size: 10px;
+    margin-top: 100px;
+}
+
+.white_img {
+    margin-left: 80px;
+}
+
+.cal {
+    text-align: center;
+    justify-content: center;
+    margin-top: 100px ;
+    background-color: #F2F8FF;
+    height: 340px;
+}
+
+.cal h1 {
+    padding-top: 70px;
+    color: #161C24;
+    font-size: 44px;
+}
+
+.cal p {
+    padding-top: 20px;
+    color: #454F5B;
+    font-size: 16px;
+}
+
+.inputss {
+    padding-top: 50px;
+}
+
+.inputss input {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 6px;
+    border: 1px solid #fff
+}
+
+.inputss button {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    background-color: #4295E4;
+    border: 1px solid #4295E4;
+    color: #fff;
+}
+
+.inputss button:hover {
+    width: 200px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid #4295E4;
+    background-color: #fff;
+    color: #000;
+}
+
+.bottom {
+    background-color: #0D2436;
+}
+
+.bottom_links {
+    margin-left: 80px;
+    padding-top: 60px;
+    display: flex;
+    gap: 140px;
+}
+.images img {
+    width: 105px;
+}
+
+.ins i {
+    color: #fff;
+    margin: 10px;
+}
+
+.navigation h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.navigation p {
+    font-size: 16px;
+    color: #C4CDD5;
+    margin: 10px;
+}
+
+.kontakt h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.kontakt span {
+    font-size: 12px;
+    color: #C4CDD5;
+    margin-left: 10px;
+}
+
+.kontakt p {
+    font-size: 16px;
+    color: #C4CDD5;
+    margin: 10px;
+}
+
+.adres h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.adres p {
+    font-size: 16px;
+    color: #C4CDD5;
+    margin: 10px;
+}
+
+.inovation h3 {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+    margin-bottom: 25px;
+}
+
+.inovation p {
+    font-size: 16px;
+    color: #C4CDD5;
+    margin: 10px;
+}
+
+.end {
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
