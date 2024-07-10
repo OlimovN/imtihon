@@ -1,75 +1,68 @@
-document.addEventListener("DOMContentLoaded", displayCart);
+document.addEventListener("DOMContentLoaded", () => {
+  displayCartItems();
+});
 
-function displayCart() {
-  const cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+function displayCartItems() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartContainer = document.getElementById("cart-container");
 
-  const cartItemsContainer = document.getElementById("cart-items");
-  cartItemsContainer.innerHTML = "";
-
-  let totalOldPrice = 0;
-
-  if (cartItems.length === 0) {
-    cartItemsContainer.innerHTML = "<p>Savatcha bo'sh.</p>";
-    document.getElementById(
-      "totalOldPrice"
-    ).textContent = `$${totalOldPrice.toFixed(2)}`;
+  if (cart.length === 0) {
+    cartContainer.innerHTML = "<p>Savatchangiz bo'sh.</p>";
     return;
   }
 
-  cartItems.forEach((cartItem) => {
-    const itemHtml = `
-      <div class="item">
-        <img src="${cartItem.image}" alt="${cartItem.name}">
-        <div class="info">
-          <h3>${cartItem.name}</h3>
-          <p>Narx: $${cartItem.newPrice.toFixed(2)}</p>
-          <p style="text-decoration: line-through;">Eski narx: $${cartItem.oldPrice.toFixed(
+  cartContainer.innerHTML = cart
+    .map(
+      (product, index) => `
+    <div class="cart-item">
+      <img src="${product.image}" alt="${product.name}" class="cart-item-image">
+      <div class="cart-item-info">
+        <h3>${product.name}</h3>
+        <div class="price">
+          <span class="new-price">Narx: $${product.newPrice.toFixed(2)}</span>
+          <span class="old-price">Eski narx: $${product.oldPrice.toFixed(
             2
-          )}</p>
-          <p>Kategoriya: ${cartItem.category}</p>
-          <div class="quantity">
-            <label for="quantity-${cartItem.id}">Soni:</label>
-            <input type="number" id="quantity-${
-              cartItem.id
-            }" name="quantity" value="${cartItem.quantity}" min="1">
-            <button onclick="updateQuantity(${cartItem.id})">Yangilash</button>
-          </div>
-          <button onclick="removeFromCart(${cartItem.id})">O'chirish</button>
+          )}</span>
         </div>
+        <div class="category">Kategoriya: ${product.category}</div>
+        <div class="rating">
+          Reyting: ${product.star}
+          <div class="stars">
+            ${"★".repeat(Math.round(product.star))}
+            ${"☆".repeat(5 - Math.round(product.star))}
+          </div>
+        </div>
+        <div class="quantity-container">
+          <label for="quantity-${index}">Miqdori:</label>
+          <input type="number" id="quantity-${index}" value="${
+        product.quantity
+      }" min="1" onchange="updateQuantity(${product.id}, this.value)">
+        </div>
+        <button onclick="removeFromCart(${
+          product.id
+        })" class="remove-button">O'chirish</button>
       </div>
-    `;
-    cartItemsContainer.innerHTML += itemHtml;
-
-    totalOldPrice += cartItem.oldPrice * cartItem.quantity;
-    document.getElementById(
-      "totalOldPrice"
-    ).textContent = `$${totalOldPrice.toFixed(2)}`;
-  });
+    </div>
+  `
+    )
+    .join("");
 }
 
 function removeFromCart(productId) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart = cart.filter((item) => item.id !== productId);
+  cart = cart.filter((product) => product.id !== productId);
   localStorage.setItem("cart", JSON.stringify(cart));
-  displayCart();
+  displayCartItems();
 }
 
-function updateQuantity(productId) {
-  const quantityInput = document.getElementById(`quantity-${productId}`);
-  const newQuantity = parseInt(quantityInput.value);
-
-  if (isNaN(newQuantity) || newQuantity < 1) {
-    alert("Iltimos, to'g'ri miqdorni kiriting.");
-    return;
-  }
-
+function updateQuantity(productId, quantity) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const productIndex = cart.findIndex((item) => item.id === productId);
+  const productIndex = cart.findIndex((product) => product.id === productId);
 
   if (productIndex > -1) {
-    cart[productIndex].quantity = newQuantity;
+    cart[productIndex].quantity = parseInt(quantity, 10);
     localStorage.setItem("cart", JSON.stringify(cart));
-    displayCart();
+    displayCartItems();
   }
 }
 
