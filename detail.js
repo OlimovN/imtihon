@@ -1,13 +1,8 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const productId = urlParams.get("id");
-  const product = await fetchProduct(productId);
-  displayProductDetail(product);
-});
-
 async function fetchProduct(productId) {
   try {
-    const response = await fetch(`https://cars-pagination.onrender.com/products/${productId}`);
+    const response = await fetch(
+      `https://cars-pagination.onrender.com/products/${productId}`
+    );
     if (!response.ok) {
       throw new Error("Mahsulotni topishda xatolik yuz berdi.");
     }
@@ -18,8 +13,40 @@ async function fetchProduct(productId) {
   }
 }
 
+async function addToCart(id, name, image, oldPrice, newPrice, category, star) {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const existingProductIndex = cart.findIndex((item) => item.id === id);
+
+  if (existingProductIndex > -1) {
+    cart[existingProductIndex].quantity += 1;
+  } else {
+    cart.push({
+      id,
+      name,
+      image,
+      oldPrice,
+      newPrice,
+      category,
+      star,
+      quantity: 1,
+    });
+  }
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Mahsulot savatchaga qo'shildi!");
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const productId = urlParams.get("id");
+  const product = await fetchProduct(productId);
+  displayProductDetail(product);
+});
+
 function displayProductDetail(product) {
-  const productDetailContainer = document.getElementById("product-detail-container");
+  const productDetailContainer = document.getElementById(
+    "product-detail-container"
+  );
   if (!product) {
     productDetailContainer.innerHTML = "<p>Mahsulot topilmadi.</p>";
     return;
@@ -33,9 +60,13 @@ function displayProductDetail(product) {
         <h3>${product.name}</h3>
         <div class="price">
           <span class="new-price">Narx: $${product.newPrice.toFixed(2)}</span>
-          <span class="old-price">Eski narx: $${product.oldPrice.toFixed(2)}</span>
+          <span class="old-price">Eski narx: $${product.oldPrice.toFixed(
+            2
+          )}</span>
         </div>
-        <div class="discount-price">Chegirma narxi: $${discountPrice.toFixed(2)}</div>
+        <div class="discount-price">Chegirma narxi: $${discountPrice.toFixed(
+          2
+        )}</div>
         <div class="category">Kategoriya: ${product.category}</div>
         <div class="rating">
           Reyting: ${product.star}
@@ -46,24 +77,14 @@ function displayProductDetail(product) {
         </div>
         <p>${product.description}</p>
         <p>Holat: ${product.status}</p>
-        <button onclick="addToCart(${product.id}, '${product.name}', '${product.image}', ${product.oldPrice}, ${product.newPrice}, '${product.category}', ${product.star})" class="add-to-cart-button">Savatchaga qo'shish</button>
+        <button onclick="addToCart(${product.id}, '${product.name}', '${
+    product.image
+  }', ${product.oldPrice}, ${product.newPrice}, '${product.category}', ${
+    product.star
+  })" class="add-to-cart-button">Savatchaga qo'shish</button>
       </div>
     </div>
   `;
-}
-
-function addToCart(id, name, image, oldPrice, newPrice, category, star) {
-  const cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const existingProductIndex = cart.findIndex(item => item.id === id);
-
-  if (existingProductIndex > -1) {
-    cart[existingProductIndex].quantity += 1;
-  } else {
-    cart.push({ id, name, image, oldPrice, newPrice, category, star, quantity: 1 });
-  }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-  alert("Mahsulot savatchaga qo'shildi!");
 }
 
 function goToCart() {
