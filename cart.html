@@ -5,19 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Savatcha</title>
   <link rel="stylesheet" href="./cart.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 </head>
 <body>
 
+  <div class="header">
+    <div class="logo">
+      <img src="./Logo.svg" alt="LOGO">
+    </div>
+
+    <div class="bar">
+      <nav>
+        <a href="./index.html">Главная</a>
+        <a href="./index.html">Каталог</a>
+        <a href="./index.html">Оптовая продажа</a>
+        <a href="./index.html">О нас</a>
+      </nav>
+    </div>
+
+    <div class="item">
+      <p><img src="./phone-call 1.svg" alt="phone">+7 (966) 55 88 499</p>
+
+      <div class="store">
+        <i class="fa-regular fa-heart"></i>
+        <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+      </div>
+    </div>
+  </div>
+    <hr>
+<!-- 
   <div class="navbar">
     <div class="logo">Onlayn Magazin</div>
     <div class="cart">
       <button onclick="goToCart()">🛒 Cart</button>
     </div>
-  </div>
+  </div> -->
+  
   <div id="cart-container" class="cart-container"></div>
+  
   <div class="total">
     <p>Jami narx: <span id="totalOldPrice">$0.00</span></p>
   </div>
+  
   <script src="./cart.js"></script>
 </body>
 </html>

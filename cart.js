@@ -40,7 +40,7 @@ function displayCartItems() {
         </div>
         <button onclick="removeFromCart(${
           product.id
-        })" class="remove-button">O'chirish</button>
+        })" class="remove-button"><i class="fas fa-trash"></i></button>
       </div>
     </div>
   `

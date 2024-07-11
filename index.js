@@ -6,7 +6,7 @@ async function fetchProducts() {
       "https://cars-pagination.onrender.com/products"
     );
     const data = await response.json();
-    const productsSlice = data.slice(0, );
+    const productsSlice = data.slice(0, 20);
     displayProducts(productsSlice);
   } catch (error) {
     console.error("Error fetching products:", error);

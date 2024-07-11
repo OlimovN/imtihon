@@ -5,6 +5,58 @@ body {
   padding: 0;
 }
 
+.header {
+  display: flex;
+  height: 70px;
+  padding: 20px 80px;
+}
+
+.bar {
+  margin-left: 50px;
+}
+
+.bar a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #000;
+  margin: 10px;
+}
+
+.bar a:hover {
+  font-size: 20px;
+  text-decoration: underline;
+  color: #000;
+  margin: 10px;
+}
+
+.item {
+  margin-left: 510px;
+  display: flex;
+  font-size: 20px;
+}
+
+.item p {
+  cursor: pointer;
+}
+
+.store {
+  margin-left: 25px;
+}
+
+.store i {
+  cursor: pointer;
+}
+
+.store a {
+  color: #000;
+  cursor: pointer;
+}
+
+.store a:hover {
+  color: #454F5B;
+  cursor: pointer;
+}
+
 .navbar {
   background-color: #333;
   color: white;
@@ -97,17 +149,18 @@ body {
 }
 
 .remove-button {
-  background-color: #dc3545;
-  color: white;
+  background-color: transparent;
+  color: #dc3545;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
   border-radius: 8px;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease;
+  font-size: 20px;
 }
 
 .remove-button:hover {
-  background-color: #c82333;
+  color: #c82333;
 }
 
 .total {

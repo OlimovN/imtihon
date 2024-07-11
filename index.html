@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Onlayn Magazin</title>
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <div class="top">
             <p>Скидка 10% по промокоду “ZAMOK” на все заказы до 10.09</p>
-
             <p id="recall">Обратный звонок</p>
         </div>
 
@@ -21,18 +21,20 @@
 
             <div class="bar">
                 <nav>
-                    <a href="#">Главная</a>
-                    <a href="#">Каталог</a>
-                    <a href="#">Оптовая продажа</a>
-                    <a href="#">О нас</a>
+                    <a href="./index.html">Главная</a>
+                    <a href="./index.html">Каталог</a>
+                    <a href="./index.html">Оптовая продажа</a>
+                    <a href="./index.html">О нас</a>
                 </nav>
             </div>
 
             <div class="item">
                 <p><img src="./phone-call 1.svg" alt="phone">+7 (966) 55 88 499</p>
-               <div class="cart">
-      <!-- <button onclick="goToCart()">🛒 Cart</button> -->
-    </div>
+
+                <div class="store">
+                    <i class="fa-regular fa-heart"></i>
+                    <a href="./cart.html"><i class="fa-solid fa-cart-shopping"></i></a>
+                </div>
             </div>
         </div>
 
@@ -65,10 +67,11 @@
                 <option value="option3">Средний</option>
                 <option value="option3">Не популярен</option>
             </select>
-
         </div>
-  <div id="products-container" class="product-grid"></div>
-  <div class="black">
+
+        <div id="products-container" class="product-grid"></div>
+
+        <div class="black">
             <div class="info">
                 <h1>Eget quis quam metus, scelerisque.</h1> <br><br>
                 <p>Odio felis sit leo, massa, mauris, at pulvinar ultrices. Eu porttitor <br> molestie massa porttitor. Quisque at turpis ut proin eu et magna etiam  <br>rhoncus.</p>
@@ -81,7 +84,6 @@
                     <div class="check2">
                         <input type="checkbox"><span>Деревянную дверь</span>
                         <input type="checkbox"><span>Деревянную дверь</span>
-    
                     </div>    
                 </div>
 
@@ -99,20 +101,16 @@
             <div class="white_img">
                 <img src="./white1.svg" alt="white">
             </div>
-
             
             <div class="info2">
                 <h1>Eget quis quam metus, scelerisque.</h1> <br><br>
-                <p>Odio felis sit leo, massa, mauris, at pulvinar ultrices. Eu porttitor <br> molestie massa porttitor. Quisque at turpis ut proin eu et magna etiam  <br>rhoncus.</p>
-
+                <p>Odio felis sit leo, massa, mauris, at pulvinar ultrices. Eu porttitor <br> molestie масса porttitor. Quisque at turpis ut proin eu et magna etiam  <br>rhoncus.</p>
 
                 <br><br><br><br><br>
 
-                <p id="ac">Ac risus neque pulvinar tincidunt est. Tristique imperdiet viverra <br> interdum in leo. Nullam ullamcorper id enim fermentum integer <br> praesent bibendum. In ullamcorper purus scelerisque malesuada et <br> egestas. Ac dictumst mauris sed facilisis.</p>
+                <p id="ac">Ac risus neque pulvinar tincidunt est. Tristique imperdiet viverра <br> interdum in leo. Nullam ullamcorper id enim fermentum integer <br> praesent bibendum. In ullamcorper purus scelerisque malesuada et <br> egestas. Ac dictumst mauris sed facilisis.</p>
             </div>
-
         </div>
-
 
         <div class="cal">
             <h1>Мы Вам перезвоним</h1>
@@ -126,57 +124,53 @@
         </div>
 
         <div class="bottom">
-
             <div class="bottom_links">
-            <div class="images">
-                <img src="./Logo.svg" alt="logo">  <br><br><br><br>
+                <div class="images">
+                    <img src="./Logo.svg" alt="logo">  <br><br><br><br>
+                    <div class="ins">
+                        <i class="fa-brands fa-vk"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </div>
+                </div>
 
-                <div class="ins">
-                    <i class="fa-brands fa-vk"></i>
-                    <i class="fa-brands fa-twitter"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
+                <div class="navigation">
+                    <h3>Навигация</h3>
+                    <p>Главная</p>
+                    <p>Каталог</p>
+                    <p>Оптовая продажа</p>
+                    <p>О нас</p>
+                </div>
+
+                <div class="kontakt">
+                    <h3>Наши контакты</h3>
+                    <span>Телефоны</span>
+                    <p>+7 (988) 565 00 38</p>
+                    <p>+375 33 662 82 56</p>
+                    <span>Email</span>
+                    <p>vladpertcev@mail.ru</p>
+                    <p>korobko416@gmail.com</p>
+                </div>
+
+                <div class="adres">
+                    <h3>Наш адрес</h3>
+                    <p>Россия, <br> Ростов-на-Дону ул. <br> Богачева, 16</p>
+                </div>
+
+                <div class="inovation">
+                    <h3>информация</h3>
+                    <p>Доставка и оплата</p>
+                    <p>Гарантии</p>
+                    <p>Возврат товара</p>
                 </div>
             </div>
 
-            <div class="navigation">
-                <h3>Навигация</h3>
-                <p>Главная</p>
-                <p>Каталог</p>
-                <p>Оптовая продажа</p>
-                <p>О нас</p>
-            </div>
+            <hr>
 
-            <div class="kontakt">
-                <h3>Наши контакты</h3>
-                <span>Телефоны</span>
-                <p>+7 (988) 565 00 38</p>
-                <p>+375 33 662 82 56</p>
-                <span>Email</span>
-                <p>vladpertcev@mail.ru</p>
-                <p>korobko416@gmail.com</p>
-            </div>
-
-            <div class="adres">
-                <h3>Наш адрес</h3>
-                <p>Россия, <br> 
-                Ростов-на-Дону ул. 
-                <br> Богачева, 16</p>
-            </div>
-
-            <div class="inovation">
-                <h3>информация</h3>
-                <p>Доставка и оплата</p>
-                <p>Гарантии</p>
-                <p>Возврат товара</p>
+            <div class="end">
+                <p>© 2021 Golden Soft All rights reserved.</p>
             </div>
         </div>
-
-        <hr>
-
-        <div class="end">
-            <p>© 2021 Golden Soft All rights reserved.</p>
-        </div>
-
     </div>
   <script src="./index.js"></script>
 </body>
